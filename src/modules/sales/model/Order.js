@@ -1,0 +1,37 @@
+import mongoose from "mongoose";
+
+const Schema = mongoose.Schema;
+const model = mongoose.model;
+
+const OrderSchema = new Schema({
+  produtos: {
+    type: Array,
+    required: true,
+  },
+  user: {
+    type: Object,
+    required: true,
+  },
+  status: {
+    type: String,
+    required: true,
+  },
+  dataCriacao: {
+    type: Date,
+    required: true,
+  },
+  dataAtualizacao: {
+    type: Date,
+    required: true,
+  },
+  transactionid: {
+    type: String,
+    required: true,
+  },
+  serviceid: {
+    type: String,
+    required: true,
+  },
+});
+
+export default model("Order", OrderSchema);
